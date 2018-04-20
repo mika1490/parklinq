@@ -4,6 +4,7 @@ import { addNavigationHelpers, StackNavigator, TabNavigator,  SwitchNavigator } 
 import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { Icon } from 'react-native-elements';
 
+import HomePageDark from '../HomePageDark';
 import HomePage from '../HomePage';
 import LoginPage from '../LoginPage';
 import RegistrationPage from '../RegistrationPage';
@@ -24,7 +25,7 @@ import { addListener } from '../../utilities/redux';
 
 export const Tabs = TabNavigator({
    Home: {
-    screen: HomePage,
+    screen: HomePageDark,
     navigationOptions: {
         tabBarLabel: 'Home',
         backgroundColor: 'black',
@@ -38,24 +39,24 @@ export const Tabs = TabNavigator({
       tabBarIcon: ({tintColor}) => <Icon name="account-circle" size={35} color={tintColor}/>
     }
   },
-  Register: { 
+  Register: {
     screen: RegistrationPage,
     navigationOptions: {
       tabBarLabel: 'Register',
       tabBarIcon: ({tintColor}) => <Icon name="register" size={35} color={tintColor}/>
-    } 
+    }
   }
 })
 
 export const AppNavigator = SwitchNavigator({
   Home: {
-    screen: HomePage
+    screen: HomePageDark
   },
   Login: {
     screen: LoginPage
   },
-  Register: { 
-    screen: RegistrationPage 
+  Register: {
+    screen: RegistrationPage
   }
 });
 
