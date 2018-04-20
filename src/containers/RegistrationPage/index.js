@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, TouchableOpacity, TextInput, Text, View, KeyboardAvoidingView, Image } from 'react-native';
+import { StyleSheet, TouchableOpacity, TextInput, View, KeyboardAvoidingView, Image } from 'react-native';
 import { FontAwesome, Entypo, MaterialIcons } from '@expo/vector-icons';
-
-// import Container from '../../components/container';
+import { Container, Button, Text } from 'native-base';
+import { LinearGradient } from 'expo';
 
 class RegistrationPage extends Component {
-  // static navigationOptions = {
-  //   drawerLabel: () => `Sign Up`
-  // }
-
   constructor(props) {
     super(props);
 
@@ -19,8 +15,6 @@ class RegistrationPage extends Component {
       password: ``
     }
   }
-
-
 
   handleSubmit() {
     const {
@@ -33,47 +27,60 @@ class RegistrationPage extends Component {
 
   render() {
     return (
-      // <Container navigation={this.props.navigation}>
-        <KeyboardAvoidingView style={styles.container} behavior='padding'>
-          <Image source={require('../../../parklinq.png')}
-            style={{ alignSelf: 'center',
-            height: 350,
-            width: 350,
-            bottom: 80 }} />
-          <View style={styles.inputSection}>
-            <FontAwesome name='user' size={20} style={styles.icon} color='black' />
-            <TextInput
-              style={{ flex: 1 }}
-              placeholder='Full Name'
-              autoCorrect={false}
-              autoCapitalize={'none'}
-              onChangeText={(name) => this.setState({ name })} />
-          </View>
-          <View style={styles.inputSection}>
-            <MaterialIcons name='email' size={20} style={styles.icon} color='black' />
-            <TextInput
-              style={{ flex: 1 }}
-              placeholder='Email'
-              autoCorrect={false}
-              autoCapitalize={'none'}
-              onChangeText={(email) => this.setState({ email })} />
-          </View>
-          <View style={styles.inputSection}>
-            <Entypo name='key' size={20} style={styles.icon} color='black' />
-            <TextInput
-              style={{ flex: 1 }}
-              placeholder='Password'
-              autoCorrect={false}
-              secureTextEntry={true}
-              onChangeText={(password) => this.setState({ password })} />
-          </View>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={this.handleSubmit.bind(this)}>
-            <Text style={{ color: `white` }}>Sign Up</Text>
-          </TouchableOpacity>
-        </KeyboardAvoidingView>
-      // </Container>
+      <LinearGradient
+        colors={['#00ced1', '#39c1ef']}
+        style={[styles.flex, styles.background]}
+        start={[0, 0]}
+        end={[1, 0]}
+      >
+        <Container style={[styles.flex]}>
+          <Image
+            source={require('../../assets/ParkLinq_logo_white.png')}
+            style={{
+              height: 70,
+              width: 300,
+              marginBottom: 75
+            }}
+            resizeMode="contain"
+          />
+          <KeyboardAvoidingView style={styles.container} behavior='padding'>
+
+            <View style={styles.inputSection}>
+              <FontAwesome name='user' size={20} style={styles.icon} color='white' />
+              <TextInput
+                style={{ flex: 1 }}
+                placeholder='Full Name'
+                autoCorrect={false}
+                autoCapitalize={'none'}
+                onChangeText={(name) => this.setState({ name })} />
+
+            </View>
+            <View style={styles.inputSection}>
+              <MaterialIcons name='email' size={20} style={styles.icon} color='white' />
+              <TextInput
+                style={{ flex: 1 }}
+                placeholder='Email'
+                autoCorrect={false}
+                autoCapitalize={'none'}
+                onChangeText={(email) => this.setState({ email })} />
+            </View>
+            <View style={styles.inputSection}>
+              <Entypo name='key' size={20} style={styles.icon} color='white' />
+              <TextInput
+                style={{ flex: 1 }}
+                placeholder='Password'
+                autoCorrect={false}
+                secureTextEntry={true}
+                onChangeText={(password) => this.setState({ password })} />
+            </View>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={this.handleSubmit.bind(this)}>
+              <Text style={{ color: '#39c1ef' }}>Sign Up</Text>
+            </TouchableOpacity>
+          </KeyboardAvoidingView>
+        </Container>
+      </LinearGradient>
     );
   }
 }
@@ -97,27 +104,29 @@ export default ConnectedRegistrationPage = connect(
 )(RegistrationPage);
 
 const styles = StyleSheet.create({
-  container: {
+  flex: {
     flex: 1,
-    backgroundColor: 'black',
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    alignContent: 'center',
+    justifyContent: 'center'
   },
   inputSection: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: `center`,
+    alignItems: `center`,
     height: 50,
-    width: '80%',
-    backgroundColor: `lightgrey`,
-    borderRadius: 10,
-    marginBottom: 20
+    margin: 10,
+    width: 300,
+    borderColor: `white`,
+    borderWidth: 2,
+    borderStyle: `solid`,
+    borderRadius: 5
   },
   input: {
     flex: 1,
     paddingVertical: 10,
     paddingBottom: 10,
-    backgroundColor: `white`
   },
   icon: {
     padding: 10
@@ -125,11 +134,11 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: `center`,
     alignItems: `center`,
-    marginTop: 10,
-    height: 40,
-    width: 250,
-    borderRadius: 5,
-    borderWidth: 2,
-    backgroundColor: `powderblue`
+    height: 50,
+    margin: 10,
+    width: 300,
+    backgroundColor: `white`,
+    borderStyle: `solid`,
+    borderRadius: 5
   }
 });

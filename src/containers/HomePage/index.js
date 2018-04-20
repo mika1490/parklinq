@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, View } from 'react-native';
-import { Container, Button, Text } from 'native-base';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo';
+import { Container, Button, Text } from 'native-base';
 
 class HomePage extends Component {
   constructor(props) {
@@ -15,27 +15,31 @@ class HomePage extends Component {
   render() {
     return (
       <LinearGradient
-        colors={['#39c1ef', '#1b8ebe']}
+        colors={['#00ced1', '#39c1ef']}
         style={[styles.flex, styles.background]}
-        start={[0,0]}
-        end={[1,0]}
+        start={[0, 0]}
+        end={[1, 0]}
       >
         <Container style={[styles.flex]}>
           <Image
-            source={require('../../assets/logo_white.png')}
+            source={require('../../assets/ParkLinq_logo_white.png')}
             style={{
-              height: 100,
-              width: 300
+              height: 70,
+              width: 300,
+              marginBottom: 75
             }}
             resizeMode="contain"
           />
-          <View style={[styles.hr]} />
-          <Button style={[styles.button]} block light>
-            <Text style={[styles.buttonText]}>Create an Account</Text>
-          </Button>
-          <Button style={[styles.button]} block light>
-            <Text style={[styles.buttonText]}>Log In</Text>
-          </Button>
+          <TouchableOpacity
+            style={styles.button1}
+            onPress={() => this.props.navigation.navigate(`Register`)}>
+            <Text style={{ color: '#39c1ef' }}>Create an Account</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button2}
+            onPress={() => this.props.navigation.navigate(`Login`)}>
+            <Text style={{ color: `white` }}>Log In</Text>
+          </TouchableOpacity>
         </Container>
       </LinearGradient>
     );
@@ -50,22 +54,26 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center'
   },
-  background: {
-    padding: 30
+  button2: {
+    justifyContent: `center`,
+    alignItems: `center`,
+    height: 50,
+    margin: 10,
+    width: 300,
+    borderColor: `white`,
+    borderWidth: 2,
+    borderStyle: `solid`,
+    borderRadius: 5
   },
-  button: {
-    marginBottom: 15
-  },
-  buttonText: {
-    color: '#39c1ef',
-    fontWeight: 'bold'
-  },
-  hr: {
-    borderBottomColor: 'white',
-    borderBottomWidth: 1,
-    width: 150,
-    marginBottom: 50,
-    marginTop: 25
+  button1: {
+    justifyContent: `center`,
+    alignItems: `center`,
+    height: 50,
+    margin: 10,
+    width: 300,
+    backgroundColor: `white`,
+    borderStyle: `solid`,
+    borderRadius: 5
   }
 });
 
