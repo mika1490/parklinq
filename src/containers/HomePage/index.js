@@ -25,11 +25,11 @@ class HomePage extends Component {
             source={require('../../assets/logo_white.png')}
             style={{
               height: 100,
-              width: 300,
-              marginBottom: 75
+              width: 300
             }}
             resizeMode="contain"
           />
+          <View style={[styles.hr]} />
           <Button style={[styles.button]} block light>
             <Text style={[styles.buttonText]}>Create an Account</Text>
           </Button>
@@ -59,6 +59,13 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#39c1ef',
     fontWeight: 'bold'
+  },
+  hr: {
+    borderBottomColor: 'white',
+    borderBottomWidth: 1,
+    width: 150,
+    marginBottom: 50,
+    marginTop: 25
   }
 });
 
