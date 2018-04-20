@@ -4874,7 +4874,7 @@ native-base-shoutem-theme@0.2.2:
     lodash "^4.10.1"
     prop-types "^15.5.10"
 
-native-base@^2.3.10:
+native-base@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/native-base/-/native-base-2.4.2.tgz#6a93157439f402753260263eac9190c9b65c1035"
   dependencies:
@@ -5658,6 +5658,10 @@ react-native-gesture-handler@1.0.0-alpha.39:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.2"
     prop-types "^15.5.10"
+
+react-native-hr-plus@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-native-hr-plus/-/react-native-hr-plus-1.0.6.tgz#355b94ad4ff4ba7eb84621ec62bdbe73c3179e9e"
 
 react-native-iphone-x-helper@^1.0.1:
   version "1.0.2"
