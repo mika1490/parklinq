@@ -31,6 +31,11 @@ class LoginPage extends Component {
         end={[1, 0]}
       >
         <Container style={[styles.flex]}>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => this.props.navigation.navigate(`Home`)}>
+            <Text style={{ color: 'white' }}>back</Text>
+          </TouchableOpacity>
           <Image
             source={require('../../assets/ParkLinq_logo_white.png')}
             style={{
@@ -109,6 +114,16 @@ const styles = StyleSheet.create({
   },
   icon: {
     padding: 10
+  },
+  button: {
+    justifyContent: `center`,
+    alignItems: `center`,
+    height: 50,
+    margin: 10,
+    width: 300,
+    backgroundColor: `white`,
+    borderStyle: `solid`,
+    borderRadius: 5
   },
   button: {
     justifyContent: `center`,
