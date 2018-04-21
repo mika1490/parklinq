@@ -28,7 +28,7 @@ import { addListener } from '../../utilities/redux';
 
 export const AppNavigator = SwitchNavigator({
   Home: {
-    screen: HomePageDark
+    screen: HomePage
   },
   Login: {
     screen: LoginPage
