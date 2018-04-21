@@ -4,6 +4,7 @@ import { StyleSheet, TouchableOpacity, TextInput, View, KeyboardAvoidingView, Im
 import { FontAwesome, Entypo, MaterialIcons } from '@expo/vector-icons';
 import { Container, Button, Text } from 'native-base';
 import { LinearGradient } from 'expo';
+import SvgUri from 'react-native-svg-uri';
 
 class RegistrationPage extends Component {
   constructor(props) {
@@ -33,12 +34,12 @@ class RegistrationPage extends Component {
         start={[0, 0]}
         end={[1, 0]}
       >
-        <Container style={[styles.flex]}>
-        <TouchableOpacity
+      <TouchableOpacity
         style={styles.backButton}
         onPress={() => this.props.navigation.navigate(`Home`)}>
-        <Text style={{ color: 'white' }}>back</Text>
+        <SvgUri width="30" height="30" source={require('../../assets/left-arrow.svg')} />
       </TouchableOpacity>
+        <Container style={[styles.flex]}>
           <Image
             source={require('../../assets/ParkLinq_logo_white.png')}
             style={{
@@ -147,12 +148,12 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   backButton: {
+    alignSelf: `flex-start`,
     justifyContent: `center`,
     alignItems: `center`,
     height: 50,
-    margin: 10,
+    marginTop: 20,
     width: 50,
-    borderColor: `#FF0000`,
     borderStyle: `solid`,
     borderRadius: 5
   }
