@@ -25,7 +25,7 @@ class LoginPage extends Component {
     return (
 
       <LinearGradient
-        colors={['#00ced1', '#39c1ef']}
+        colors={['#05E4F7', '#0475B6']}
         style={[styles.flex, styles.background]}
         start={[0, 0]}
         end={[1, 0]}
@@ -35,16 +35,22 @@ class LoginPage extends Component {
         onPress={() => this.props.navigation.navigate(`Home`)}>
         <SvgUri width="30" height="30" source={require('../../assets/left-arrow.svg')} />
       </TouchableOpacity>
+      <TouchableOpacity
+              style={styles.button2}
+              onPress={this.handleSubmit.bind(this)}>
+              <FontAwesome name='google' size={30} style={styles.icon} color='#39c1ef' />
+              <Text style={{ color: '#39c1ef', paddingRight: 60 }}>Log In with Google</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button3}
+              onPress={this.handleSubmit.bind(this)}>
+              <FontAwesome name='facebook' size={30} style={styles.icon} color='#39c1ef' />
+              <Text style={{ color: '#39c1ef', paddingRight: 60 }}>Log In with Facebook</Text>
+            </TouchableOpacity>
+            <Text style={styles.textRegister}> ───────  Or  ───────</Text>
+            {/* <View style = {styles.lineStyle} /> */}
       <Container style={[styles.flex]}>
-          <Image
-            source={require('../../assets/ParkLinq_logo_white.png')}
-            style={{
-              height: 70,
-              width: 300,
-              marginBottom: 75
-            }}
-            resizeMode="contain"
-          />
+         
           <KeyboardAvoidingView style={styles.container} behavior='padding'>
             <View style={styles.inputSection}>
               <FontAwesome name='user' size={20} style={styles.icon} color='white' />
@@ -70,6 +76,7 @@ class LoginPage extends Component {
               <Text style={{ color: '#39c1ef' }}>Login</Text>
             </TouchableOpacity>
           </KeyboardAvoidingView>
+          <Text style={{ color: 'white', marginBottom: 10 }}>Forgot Password?</Text>
         </Container>
       </LinearGradient>
 
@@ -99,13 +106,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: `center`,
     alignItems: `center`,
-    height: 50,
+    height: 45,
     margin: 10,
     width: 300,
     borderColor: `white`,
     borderWidth: 2,
     borderStyle: `solid`,
-    borderRadius: 5
+    borderRadius: 30
   },
   input: {
     flex: 1,
@@ -118,13 +125,39 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: `center`,
     alignItems: `center`,
-    height: 50,
+    height: 45,
     margin: 10,
     width: 300,
     backgroundColor: `white`,
     borderStyle: `solid`,
-    borderRadius: 5
+    borderRadius: 30
   },
+  button2: {
+    flexDirection: 'row',
+    justifyContent: `center`,
+    alignItems: `center`,
+    height: 45,
+    marginTop: 100,
+    width: 300,
+    backgroundColor: `white`,
+    borderStyle: `solid`,
+    borderRadius: 30
+  },
+  button3: {
+    flexDirection: 'row',
+    justifyContent: `center`,
+    alignItems: `center`,
+    height: 45,
+    marginTop: 30,
+    width: 300,
+    backgroundColor: `white`,
+    borderStyle: `solid`,
+    borderRadius: 30
+  },
+  textRegister:{
+    color: 'white',
+    marginTop: 40
+},
   backButton: {
     alignSelf: `flex-start`,
     justifyContent: `center`,
@@ -133,6 +166,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: 50,
     borderStyle: `solid`,
-    borderRadius: 5
+    borderRadius: 30
   }
 });

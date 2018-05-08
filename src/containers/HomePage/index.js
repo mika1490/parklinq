@@ -15,18 +15,19 @@ class HomePage extends Component {
   render() {
     return (
       <LinearGradient
-        colors={['#3BCCF9', '#1887BF']}
+        colors={['#05E4F7', '#0475B6']}
         style={[styles.flex, styles.background]}
         start={[0, 0]}
         end={[1, 0]}
       >
         <Container style={[styles.flex]}>
           <Image
-            source={require('../../assets/ParkLinq_logo_white.png')}
+            source={require('../../assets/ParkLinq_Logo.png')}
             style={{
-              height: 70,
+              marginTop: 100,
+              height: 100,
               width: 300,
-              marginBottom: 75
+              marginBottom: 15
             }}
             resizeMode="contain"
           />
@@ -57,23 +58,23 @@ const styles = StyleSheet.create({
   button2: {
     justifyContent: `center`,
     alignItems: `center`,
-    height: 50,
+    height: 45,
     margin: 10,
     width: 300,
     borderColor: `white`,
     borderWidth: 2,
     borderStyle: `solid`,
-    borderRadius: 5
+    borderRadius: 30
   },
   button1: {
     justifyContent: `center`,
     alignItems: `center`,
-    height: 50,
+    height: 45,
     margin: 10,
     width: 300,
     backgroundColor: `white`,
     borderStyle: `solid`,
-    borderRadius: 5
+    borderRadius: 30
   }
 });
 
