@@ -15,7 +15,7 @@ class HomePage extends Component {
   render() {
     return (
       <LinearGradient
-        colors={['#00ced1', '#39c1ef']}
+        colors={['#3BCCF9', '#1887BF']}
         style={[styles.flex, styles.background]}
         start={[0, 0]}
         end={[1, 0]}
