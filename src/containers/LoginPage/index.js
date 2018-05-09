@@ -25,7 +25,7 @@ class LoginPage extends Component {
     return (
 
       <LinearGradient
-        colors={['#05E4F7', '#0475B6']}
+        colors={['#05E4F7', '#1887BF']}
         style={[styles.flex, styles.background]}
         start={[0, 0]}
         end={[1, 0]}

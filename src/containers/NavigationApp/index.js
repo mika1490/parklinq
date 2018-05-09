@@ -4,7 +4,7 @@ import { addNavigationHelpers, StackNavigator, TabNavigator,  SwitchNavigator } 
 import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, NavigatorIOS } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-import HomePageDark from '../HomePageDark';
+
 import HomePage from '../HomePage';
 import LoginPage from '../LoginPage';
 import RegistrationPage from '../RegistrationPage';

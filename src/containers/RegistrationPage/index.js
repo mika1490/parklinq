@@ -29,64 +29,60 @@ class RegistrationPage extends Component {
   render() {
     return (
       <LinearGradient
-        colors={['#00ced1', '#39c1ef']}
-        style={[styles.flex, styles.background]}
-        start={[0, 0]}
-        end={[1, 0]}
-      >
-      <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => this.props.navigation.navigate(`Home`)}>
-        <SvgUri width="30" height="30" source={require('../../assets/left-arrow.svg')} />
-      </TouchableOpacity>
-        <Container style={[styles.flex]}>
-          <Image
-            source={require('../../assets/ParkLinq_logo_white.png')}
-            style={{
-              height: 70,
-              width: 300,
-              marginBottom: 75
-            }}
-            resizeMode="contain"
-          />
-          <KeyboardAvoidingView style={styles.container} behavior='padding'>
-
-            <View style={styles.inputSection}>
-              <FontAwesome name='user' size={20} style={styles.icon} color='white' />
-              <TextInput
-                style={{ flex: 1 }}
-                placeholder='Full Name'
-                autoCorrect={false}
-                autoCapitalize={'none'}
-                onChangeText={(name) => this.setState({ name })} />
-
-            </View>
-            <View style={styles.inputSection}>
-              <MaterialIcons name='email' size={20} style={styles.icon} color='white' />
-              <TextInput
-                style={{ flex: 1 }}
-                placeholder='Email'
-                autoCorrect={false}
-                autoCapitalize={'none'}
-                onChangeText={(email) => this.setState({ email })} />
-            </View>
-            <View style={styles.inputSection}>
-              <Entypo name='key' size={20} style={styles.icon} color='white' />
-              <TextInput
-                style={{ flex: 1 }}
-                placeholder='Password'
-                autoCorrect={false}
-                secureTextEntry={true}
-                onChangeText={(password) => this.setState({ password })} />
-            </View>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={this.handleSubmit.bind(this)}>
-              <Text style={{ color: '#39c1ef' }}>Sign Up</Text>
-            </TouchableOpacity>
-          </KeyboardAvoidingView>
-        </Container>
-      </LinearGradient>
+      colors={['#05E4F7', '#1887BF']}
+      style={[styles.flex, styles.background]}
+      start={[0, 0]}
+      end={[1, 0]}
+    >
+    <TouchableOpacity
+      style={styles.backButton}
+      onPress={() => this.props.navigation.navigate(`Home`)}>
+      <SvgUri width="30" height="30" source={require('../../assets/left-arrow.svg')} />
+    </TouchableOpacity>
+    <TouchableOpacity
+            style={styles.button2}
+            onPress={this.handleSubmit.bind(this)}>
+            <FontAwesome name='google' size={30} style={styles.icon} color='#39c1ef' />
+            <Text style={{ color: '#39c1ef', paddingRight: 60 }}>Sign Up with Google</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button3}
+            onPress={this.handleSubmit.bind(this)}>
+            <FontAwesome name='facebook' size={30} style={styles.icon} color='#39c1ef' />
+            <Text style={{ color: '#39c1ef', paddingRight: 60 }}>Sign Up with Facebook</Text>
+          </TouchableOpacity>
+          <Text style={styles.textRegister}> ───────  Or  ───────</Text>
+          {/* <View style = {styles.lineStyle} /> */}
+    <Container style={[styles.flex]}>
+       
+        <KeyboardAvoidingView style={styles.container} behavior='padding'>
+          <View style={styles.inputSection}>
+            <FontAwesome name='user' size={20} style={styles.icon} color='white' />
+            <TextInput
+              style={styles.input}
+              placeholder='Email'
+              autoCorrect={false}
+              autoCapitalize={'none'}
+              onChangeText={(email) => this.setState({ email })} />
+          </View>
+          <View style={styles.inputSection}>
+            <Entypo name='key' size={20} style={styles.icon} color='white' />
+            <TextInput
+              style={{ flex: 1 }}
+              placeholder='Password'
+              autoCorrect={false}
+              secureTextEntry={true}
+              onChangeText={(password) => this.setState({ password })} />
+          </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={this.handleSubmit.bind(this)}>
+            <Text style={{ color: '#39c1ef' }}>Sign Up with Email</Text>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
+        <Text style={{ color: 'white', marginBottom: 10 }}>By creating an account, you agree to ParkLinq's Terms and Conditions</Text>
+      </Container>
+    </LinearGradient>
     );
   }
 }
@@ -121,13 +117,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: `center`,
     alignItems: `center`,
-    height: 50,
+    height: 45,
     margin: 10,
     width: 300,
     borderColor: `white`,
     borderWidth: 2,
     borderStyle: `solid`,
-    borderRadius: 5
+    borderRadius: 30
   },
   input: {
     flex: 1,
@@ -140,13 +136,39 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: `center`,
     alignItems: `center`,
-    height: 50,
+    height: 45,
     margin: 10,
     width: 300,
     backgroundColor: `white`,
     borderStyle: `solid`,
-    borderRadius: 5
+    borderRadius: 30
   },
+  button2: {
+    flexDirection: 'row',
+    justifyContent: `center`,
+    alignItems: `center`,
+    height: 45,
+    marginTop: 100,
+    width: 300,
+    backgroundColor: `white`,
+    borderStyle: `solid`,
+    borderRadius: 30
+  },
+  button3: {
+    flexDirection: 'row',
+    justifyContent: `center`,
+    alignItems: `center`,
+    height: 45,
+    marginTop: 30,
+    width: 300,
+    backgroundColor: `white`,
+    borderStyle: `solid`,
+    borderRadius: 30
+  },
+  textRegister:{
+    color: 'white',
+    marginTop: 40
+},
   backButton: {
     alignSelf: `flex-start`,
     justifyContent: `center`,
@@ -155,6 +177,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: 50,
     borderStyle: `solid`,
-    borderRadius: 5
+    borderRadius: 30
   }
 });
